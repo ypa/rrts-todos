@@ -5,7 +5,8 @@ import { StoreState } from '../reducers';
 
 interface AppProps {
   todos: Todo[];
-  fetchTodos: typeof fetchTodos;
+  fetchTodos: Function, // Workaround for connect function (at the bottom) not understanding
+                        // redux thunk action creator and only expecting a normal function
   deleteTodo: typeof deleteTodo;
 }
 
